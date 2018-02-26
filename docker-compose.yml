@@ -16,9 +16,9 @@ services:
     # entrypoint: "/home/node/webapp/scripts/entrypoint.sh"
 
   api-server:
-    build: './ShowOffAPI'
+    build: './api-src'
     ports:
     - "3000:8100"
     volumes:
-    - ./ShowOffAPI:/home/node/server
+    - ./api-src:/home/node/server
     # entrypoint: "/home/node/server/entrypoint.sh"
