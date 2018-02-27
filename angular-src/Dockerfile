@@ -2,13 +2,13 @@
 FROM node:8
 
 # Make the directory that the app will be stored in inside the container
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /angular-src
 
 # Work dir effectively 'cd's into that directory
-WORKDIR /usr/src/app
+WORKDIR /angular-src
 
 # copy the local package.json so we can install dependencies
-COPY package.json /usr/src/app
+COPY package.json /angular-src
 
 # Install dependencies. Note that this will essentially npm install all of angular so it may take a while
 RUN npm install

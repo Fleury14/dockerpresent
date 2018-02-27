@@ -12,7 +12,7 @@ services:
     - "4200:4200"
     - "49153:49153"
     volumes:
-    - ./angular-src:/usr/src/app
+    - ./angular-src:/angular-src
     # entrypoint: "/home/node/webapp/scripts/entrypoint.sh"
 
   api-server:
