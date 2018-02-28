@@ -11,6 +11,8 @@ services:
     ports:
     - "4200:4200"
     - "49153:49153"
+    networks:
+    - backend
     volumes:
     - ./angular-src:/angular-src
     # entrypoint: "/home/node/webapp/scripts/entrypoint.sh"
@@ -18,7 +20,9 @@ services:
   api-server:
     build: './api-src'
     ports:
-    - "3000:8100"
+    - "3000:3000"
+    networks:
+    - backend
     volumes:
     - ./api-src:/home/node/server
     working_dir: "/home/node/server"
@@ -28,3 +32,8 @@ services:
     image: mongo:latest
     ports:
       - "27017:27017"
+    networks:
+    - backend
+
+networks:
+  backend:
