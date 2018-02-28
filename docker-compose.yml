@@ -23,6 +23,8 @@ services:
     - "3000:3000"
     networks:
     - backend
+    depends_on:
+    - mongo-database
     volumes:
     - ./api-src:/home/node/server
     working_dir: "/home/node/server"
