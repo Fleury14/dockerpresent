@@ -21,4 +21,10 @@ services:
     - "3000:8100"
     volumes:
     - ./api-src:/home/node/server
+    working_dir: "/home/node/server"
     # entrypoint: "/home/node/server/entrypoint.sh"
+
+  mongo-database:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
